@@ -1,0 +1,26 @@
+.title-list-menu{
+  font-style: normal;
+}
+
+.mat-divider{
+  margin-top: 5px;
+}
+
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.headers-align .mat-expansion-panel-header-title,
+.headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,76 @@
+/**
+*
+*/
+
+// Import all the tools needed to customize the theme and extract parts of it
+
+.mat-card{
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  }
+
+.card-media{
+  padding-left: 20px;
+}
+
+.image-card-hotel > img {
+  width: 230px;
+  height: 150px;
+}
+
+.price-card-title{
+  font-size: 20px;
+}
+.price-card{
+  font-size: 30px;
+}
+
+.pad-15{
+  padding: 15px, 15px, 0px 15px;
+}
+
+.pad-tb-bt-15 > * {
+padding-bottom: 5px;
+padding-top: 5px;
+}
+
+.vert{
+  border-left: 1px solid grey ;
+  border-left-style: dotted;
+  height: 150px;
+  position: absolute;
+}
+
+.hori{
+  border-bottom  : 1px solid grey ;
+  border-bottom-style: dotted;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.button-card-price{
+  width: 200px;
+  font-weight: bold;
+}
+
+
+@media(max-width: 999px){
+  .image-card-hotel > img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .button-card-price{
+    width: 100%;
+    font-weight: bold;
+  }
+
+  .vert{
+    display: none;
+  }
+
+}
+

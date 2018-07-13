@@ -1,0 +1,75 @@
+<mat-accordion class="headers-align" (click)="toggle()">
+  <mat-expansion-panel hideToggle="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title [ngClass]="{'link-color': mobile}" class="title-list-head">
+        <span mat-line>
+          <strong> Filtros </strong>
+        </span>
+        <mat-panel-description *ngIf="mobile" >
+          <mat-icon>{{IconMenu}}</mat-icon>
+        </mat-panel-description>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-divider></mat-divider>
+
+<div *ngIf="show" >
+
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title class="title-list-menu link-color">
+        <mat-icon mat-list-icon svgIcon="search"></mat-icon>
+        <span mat-line>
+          <strong> &nbsp; Nombre de hotel</strong>
+        </span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form class="form-inline">
+      <div class="form-group mb-2 mr-md-2">
+        <input type="text" class="form-control" [(ngModel)]="search" name="search"  placeholder="ingrese el nombre del hotel">
+      </div>
+      <div class="form-group mb-2 mr-md-2">
+        <button mat-raised-button color="primary" (click)="SendSearch()" >Aceptar</button>
+      </div>
+    </form>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-divider></mat-divider>
+
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="title-list-menu link-color">
+        <mat-icon mat-list-icon svgIcon="star"></mat-icon>
+        <span mat-line>
+          <strong> &nbsp; Estrellas</strong>
+        </span>
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+    <section class="example-section">
+      <div class="form-check">
+        <input class="form-check-input" name="all" (change)="FieldsChange($event)" type="checkbox" id="all" value="all" checked>
+        <label class="form-check-label" for="all"> Todas las estrellas </label>
+      </div>
+      <div class="form-check" *ngFor="let data of category  ">
+        <input class="form-check-input" name="item[]" (change)="FieldsChange($event)" [value]="data.num" type="checkbox" id="{{data.id}}">
+        <label class="form-check-label" for="{{data.id}}">
+
+          <mat-icon *ngFor="let cant of funciones.generated_start(data.num)" mat-list-icon class="icon-start-category" svgIcon="{{data.icon}}"></mat-icon>
+
+        </label>
+
+      </div>
+
+    </section>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-divider></mat-divider>
+
+</div>

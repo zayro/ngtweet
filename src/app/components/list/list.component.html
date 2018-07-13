@@ -1,0 +1,45 @@
+<mat-card *ngFor="let data of dataSource  | filterBy: ['name']: search |  FilterPipe: MultFilter ">
+  <mat-card-content>
+
+    <div class="row">
+
+      <div class="col-sm-12 col-lg-3">
+        <div class="image-card-hotel">
+            <img  src="../../../assets/images/hotels/{{data.image}}" alt="{{data.image}}">
+        </div>
+
+      </div>
+
+      <div class="col-sm-12 col-lg-6">
+
+          <div class="text-left">
+            <p class="link-color">{{data.name}}</p>
+            <p>
+              <mat-icon *ngFor="let ico of funciones.generated_start(data.stars)" mat-list-icon class="icon-start-category" svgIcon="star"></mat-icon>
+            </p>
+            <p>
+              <mat-icon *ngFor="let ico of data.amenities" mat-list-icon class="icon-start-category" svgIcon="{{ico}}"></mat-icon>
+            </p>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-lg-3">
+        <div [ngClass]="mobile ? 'hori' : 'vert'"></div>
+        <div class="text-center pad-15">
+          <p>Precio por noche por habitacion</p>
+          <p class="price-card-title warn-color">
+            ARS
+            <strong class="price-card">{{data.price}}</strong>
+          </p>
+
+          <button mat-raised-button color="primary" class="button-card-price">Ver hotel</button>
+
+        </div>
+      </div>
+    </div>
+
+  </mat-card-content>
+
+
+
+</mat-card>
