@@ -1,6 +1,6 @@
 import { Component, OnInit, isDevMode } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
-import {MatIconRegistry} from '@angular/material';
+
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,8 @@ import {MatIconRegistry} from '@angular/material';
 })
 export class RootComponent implements OnInit {
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon(
-        'almundo',
-        sanitizer.bypassSecurityTrustResourceUrl('../../../assets/icons/logo-almundo.svg'));
+  constructor() {
+
   }
 
 

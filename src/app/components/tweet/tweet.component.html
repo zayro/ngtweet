@@ -1,0 +1,20 @@
+<div *ngIf="keyPublic | isEmpty" >
+  <h1>PUBLIC</h1>
+<div *ngFor="let data of keyPublic | orderBy: order">
+   <div> <strong>id:</strong> {{data.id_str}}</div>
+   <div> <strong>Text:</strong> {{data.text}}</div>
+   <div> <strong>hashtags:</strong> {{data.extended_tweet.entities.hashtags | json}}</div>
+   <hr>
+</div>
+</div>
+
+<div *ngIf="keyPrivate | isEmpty" >
+    <h1>PRIVATE</h1>
+<div *ngFor="let data of keyPrivate  | orderBy: order">
+    <div> <strong>id:</strong> {{data.id_str}}</div>
+    <div> <strong>Text:</strong> {{data.text}}</div>
+    <div> <strong>hashtags:</strong> {{data.extended_tweet.entities.hashtags | json}}</div>
+    <hr>
+  </div>
+  <hr>
+</div>

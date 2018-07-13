@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
+
+// @import url('//fonts.googleapis.com/icon?family=Material+Icons');
+
+// @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+@import '~@angular/material/theming';
+@include mat-core();
+$primary: mat-palette($mat-blue, 900);
+$accent:  mat-palette($mat-light-blue, 600, 100, 800);
+$warn:    mat-palette($mat-orange, 600);
+$theme: mat-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+$font-stack:    Helvetica, sans-serif;
+$font-primary: 'Roboto', sans-serif;
+$font-secundary: 'Lato', sans-serif;
+
+$primary-color: #333;
+
+/**
+* GLOBAL THEME
+*/
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  background-color: #f0f0f0;
+  font-family: $font-secundary;
+}
+
+.top-container{
+  margin-top: 20px;
+}
+
+.accent-color {
+  color: mat-color($accent) !important;
+}
+
+.warn-color {
+  color: mat-color($warn) !important;
+}
+
+.link-color{
+  color:#0489B1;
+}
+
